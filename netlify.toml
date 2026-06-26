@@ -1,12 +1,12 @@
 [build]
-command = "cd frontend && npm install && npx vite build"
+command = "npm run build"
 publish = "frontend/dist"
 functions = "netlify/functions"
 
 [functions]
 node_bundler = "esbuild"
 external_node_modules = ["@prisma/client", "serverless-http", "express", "cors"]
-included_files = ["backend/prisma/**"]
+included_files = ["backend/prisma/**", "backend/node_modules/.prisma/**"]
 
 [[redirects]]
 from = "/api/*"
